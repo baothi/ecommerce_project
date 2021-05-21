@@ -7,17 +7,26 @@ Product
 <div class="container py-5">
   <div class="row mt-5">
     <div class="col-10 mx-auto col-md-6 my-3">
-      <img src="{% static 'img/product-2.png'%}" alt="">
+      <img src="{{product.image.url}}" alt="">
     </div>
     <div class="col-0 mx-auto col-md-6 my-3">
       <div>
-        <h1 class="product_title">HTC One</h1>
-        <h5 class="text-info font-italic mb-3"><span class="me-1">$</span>499</h5>
+        <h1 class="product_title">{{product.name}}</h1>
+        <h5 class="text-info font-italic mb-3"><span class="me-1">$</span>{{product.price}}</h5>
         <p class="product_description">Product Description</p>
-        <p class="text-justify product_text">Năm nay, công nghệ màn hình trên 12 Pro Max cũng được đổi mới và trang bị tốt hơn cùng kích thước lên đến 6.7 inch, lớn hơn nhiều so với điện thoại iPhone 12 Mini. Với công nghệ màn hình OLED cho khả năng hiển thị hình ảnh lên đến 2778 x 1284 pixels. Bên cạnh đó, màn hình này còn cho độ sáng tối đa cao nhất lên đến 800 nits, luôn đảm bảo cho bạn một độ sáng cao và dễ nhìn nhất ngoài nắng.</p>
-        <p class="text-justify product_text"><b>Out of Stock</b></p>
+        <p class="text-justify product_text">{{product.description}}</p>
+        {% if product.stock <= 0 %}
+          <p class="text-justify product_text"><b>Out of Stock</b></p>
+        {% else %}
+          <a href="">
+            <button type="button" name="button" class="btn btn-secondary">
+              Add to Cart
+            </button>
+          </a>
+        {% endif %}
       </div>
     </div>
   </div>
 </div>
 {% endblock %}
+

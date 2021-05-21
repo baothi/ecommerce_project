@@ -17,6 +17,8 @@ class Category(models.Model):
         verbose_name_plural = 'categories'
 
     def get_url(self):
+        # import pdb; pdb.set_trace()
+        # breakpoint()
         return reverse('products_by_category', args=[self.slug])
 
     def __str__(self):

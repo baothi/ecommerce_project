@@ -11,10 +11,23 @@ def home(request, category_slug=None):
     products = Product.objects.filter(category=category_page,available=True)
   else:
     products = Product.objects.all().filter(available=True)
+  # breakpoint()
   return render(request, 'home.html',{
     'category': category_page,
     'products': products
     })
 
-def productPage(request):
-  return render(request, 'product.html')
+def productPage(request, category_slug, product_slug):
+    try:
+        product = Product.objects.get(category__slug=category_slug, slug=product_slug)
+    except Exception as e:
+        raise e
+
+    # if request.method == 'POST' and request.user.is_authenticated and request.POST['content'].strip() != '':
+    #     Review.objects.create(product=product,
+    #                           user=request.user,
+    #                           content=request.POST['content'])
+
+    # reviews = Review.objects.filter(product=product)
+
+    return render(request, 'product.html', {'product': product})
