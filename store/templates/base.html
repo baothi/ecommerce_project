@@ -13,58 +13,18 @@
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
-    <!-- <header id="header" class="">
-      <a href="{% url 'home' %}">Home</a> |
-      <a href="{% url 'about' %}">About</a> |
-    </header>
-    <a class="fas fa-coffee" style="color: #339af0"></a> -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-      <div class="container-fluid">
-        <a href="#" class="navbar-barand"><i class="fas fa-store text-warning fa-2x"></i></a>
-        <!-- <button type="button" class="navbar-toggler bg-light" data-toggle="collapse"
-        data-target="#nav" name="button"><span class="navbar-toggler-icon"></span></button> -->
-        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-between" id="navbarNavDarkDropdown">
-          <ul class="navbar-nav ml-3">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-light text-uppercase font-weight-bold px-3" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Categories
-              </a>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Category 1</a></li>
-                <li><a class="dropdown-item" href="#">Category 2</a></li>
-                <li><a class="dropdown-item" href="#">Category 3</a></li>
-                <li><a class="dropdown-item" href="#">Category 4</a></li>
-                <li><a class="dropdown-item" href="#">Category 5</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="" title="">Contact</a></li>
-            <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="" title="">About</a></li>
-          </ul>
-          <form class="d-flex">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-              <button class="btn btn-warning" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </nav>
+
+    {% include 'navbar.html' %}
     {% block content %}
     {% endblock %}
+    {% include 'footer.html' %}
 
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    -->
   </body>
 </html>
