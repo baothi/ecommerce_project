@@ -26,6 +26,13 @@
         </li>
         <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="" title="">Contact</a></li>
         <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="" title="">About</a></li>
+        {% if item_count > 0 %}
+          <li class="nav-item">
+            <a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{% url 'cart_detail' %}">
+              <i class="fas fa-shopping-cart"></i>({{item_count}})
+            </a>
+          </li>
+        {% endif %}
       </ul>
       <form class="d-flex">
         <div class="input-group">
