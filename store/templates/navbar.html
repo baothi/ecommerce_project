@@ -17,20 +17,18 @@
             {% for category in links %}
               <a class="dropdown-item" href="{{category.get_url}}">{{category.name}}</a>
             {% endfor %}
-            <!-- <li><a class="dropdown-item" href="#">Category 1</a></li>
-            <li><a class="dropdown-item" href="#">Category 2</a></li>
-            <li><a class="dropdown-item" href="#">Category 3</a></li>
-            <li><a class="dropdown-item" href="#">Category 4</a></li>
-            <li><a class="dropdown-item" href="#">Category 5</a></li> -->
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="" title="">Contact</a></li>
         <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="" title="">About</a></li>
         {% if request.user.is_authenticated and request.user.first_name %}
-          <li class="nav-item">
-            <span class="nav-link text-light text-uppercase font-weight-bold px-3" href="" title="">
+          <li class="nav-item dropdown">
+            <span class="nav-link text-light text-uppercase font-weight-bold px-3 dropdown-toggle" data-bs-toggle="dropdown" href="" title="">
               welcome , {{ request.user.first_name }} <i class="fas fa-user circle"></i>
             </span>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <a class="dropdown-item" href="{% url 'order_history' %}">Order History</a>
+          </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{% url 'signout'%}" title="">
