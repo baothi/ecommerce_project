@@ -26,6 +26,29 @@
         </li>
         <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="" title="">Contact</a></li>
         <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="" title="">About</a></li>
+        {% if request.user.is_authenticated and request.user.first_name %}
+          <li class="nav-item">
+            <span class="nav-link text-light text-uppercase font-weight-bold px-3" href="" title="">
+              welcome , {{ request.user.first_name }} <i class="fas fa-user circle"></i>
+            </span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{% url 'signout'%}" title="">
+              Sign Out <i class="fas fa-sign-out-alt"></i>
+            </a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{% url 'signup' %}" title="">
+              Sign Up <i class="fas fa-user-plus"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{% url 'signin' %}" title="">
+              Sign In <i class="fas fa-sign-in-alt"></i>
+            </a>
+          </li>
+        {% endif %}
         {% if item_count > 0 %}
           <li class="nav-item">
             <a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{% url 'cart_detail' %}">

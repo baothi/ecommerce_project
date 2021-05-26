@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'store',
     'stripe',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -138,5 +139,5 @@ STRIPE_SECRET_KEY = 'sk_test_51IuXqOBmTxR6KoZuGFYUsktxAUQu0Wa79GOvU73Y0tEcKE9zWS
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
